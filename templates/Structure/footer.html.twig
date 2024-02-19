@@ -1,0 +1,27 @@
+
+{% block footer %}
+
+        <footer>      
+
+            <div class="mentionslegales" ><a href="/mentionslegales" alt="">Mentions Légales</a></div>
+            <div class="horaires">
+           <ul> 
+            {% for horaire in horaires %}
+
+                {% set jsonDonnees = horaire[2]|json_decode %} 
+               
+                  <li> {{ horaire[0] }} : {{ jsonDonnees['Debut_de_matinee'] }} ,{{  jsonDonnees['Fin_de_matinee'] }} & {{  jsonDonnees['Debut_apres-midi'] }} , {{  jsonDonnees['Fin_apres-midi']}}  </li>            
+         
+                
+            {% endfor %}
+
+
+
+
+
+            </ul>
+            </div> 
+             <div class="copyright">copyright 2024Ⓒ<span class="copy-text">{{title|capitalize}}</span></div> 
+        </footer
+
+{% endblock %}    

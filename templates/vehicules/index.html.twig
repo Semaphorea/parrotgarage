@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicules d'occasion{% endblock %}
+
+{% block body %}
+
+<div class="maincontainer">
+<div class="page-{{page}}">
+     <h2>{{page|capitalize}}</h2>
+       
+          <ul>
+          {% for vehicule in vehicules %}
+
+       
+          {% set line = '' %}  
+          {% set key = '' %}    
+        
+            <li>
+                <card class="card vehicule col-3">   
+                   <div class="img card-image " >
+                        {% if vehicule.photo != null %}
+                         <img src="{{vehicule.photo}}" alt="{{ vehicule.brand}} {{vehicule.model}}" width=inherited height=inherited></img>  
+                         {% else %}
+                         <img src="Images\Illustrations\default-vehicule.png" alt="{{ vehicule.brand}} {{ vehicule.model}}" {{vehicule.model}}" width=100% height=100% ></img>  
+                         {% endif %}
+                   </div> 
+                     
+                  <ul  class='cardlist'>
+                    <li> <h4> {{ vehicule.brand }} {{ vehicule.model}} </h4></li>   
+
+                       {% for feature in vehicule.features %}                                                  
+                              <li>{{ feature|json_encode|replace({"\"":"", "{":"","}":"",":":" : " })|capitalize  }}</li>                                            
+                       {%  endfor %}
+                    
+                    
+                     <li> Année : {{ vehicule.year | date('Y')}}  </li>       
+                     <li> Kilométrage :  {{ vehicule.kilometers}} Km </li>
+                     <li> Type : {{ vehicule.type}}  </li>
+                     <li> Prix : {{ vehicule.price}}  </li>
+                     </ul>     
+                     
+                      <button onClick="javascript:document.location.href='/contact'" >Nous contacter</button>
+                     
+                   </card>
+
+                
+                
+                
+             </li>
+          {% endfor %}
+          </ul>
+</div> 
+
+
+
+</div> 
+{% endblock %}

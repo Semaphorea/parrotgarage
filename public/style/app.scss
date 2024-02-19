@@ -1,0 +1,158 @@
+
+@import "../../node_modules/bootstrap/scss/bootstrap";   
+
+
+@font-face {
+    font-family: Dopestyle;
+    src: url("/Fonts/Dopestyle.ttf"); 
+}
+
+
+/*********************
+*    Architecture
+*********************/
+
+body { 
+    
+    width:100%;  
+    overflow-x: hidden;
+    
+   
+}    
+ 
+  
+.logo{ 
+      margin-left:10%;
+      font-family:Dopestyle;   
+       & img { width: 10em; }  
+       & .brant{font-size: 2.5em;
+    }
+}
+    
+
+/*Structure*/
+header{width:100%;
+       height:28em;     
+       background-image : url("/Images/Illustrations/front2.png");   
+       background-repeat: no-repeat;
+       background-size: cover;
+       }  
+
+.navbar {width:100%;   
+         padding-left:20em;
+         margin:0;
+         display:flex;justify-content:space-between;
+           & .navbar-nav li  { display:inline-block;
+            margin:0 4em 0 4em;    
+            } 
+}  
+#navbreadcrumb{margin-left:20em;}
+.breadcrump {
+        margin:2em 0 0 2.7em;
+        & li {display:inline-block;  } }
+footer{position:sticky; 
+       height:10%; 
+       width:100%; 
+           
+           & .horaires,.mentionslegales{display:flex; justify-content:space-around;
+             & ul li {list-style-type: none;}    
+           }  
+           & .copyright{ display:flex;justify-content: flex-end;margin:3em 2em 0 0;}  
+        }       
+    
+/*Hierachie des titres*/
+h1{font-size:2em;}
+
+
+/*Fonction*/
+
+.connexion {display:flex; justify-content: left;} 
+ 
+
+/*Pages*/  
+.maincontainer {
+    margin: 3% 21%;
+    min-height: 25em;
+}      
+
+/**Accueil**/
+.admin_accueil_list {display:flex; margin-top:6em ;justify-content: space-around ;list-style-type:none;}    
+.admin_accueil_list li{display:inline-block;}    
+.notification {float:right; width:20%; height:20em;margin-top:-10em; 
+         & button{display:flex; justify-content: space-around;}}  
+/* Contact */
+.page-contact form div {width:8em;}
+
+  
+
+/* Service */
+ 
+.page-services ul li  { list-style-type: none; list-style:none; }     
+
+@media screen and (min-width:768px){
+    
+    .service3 {display: block;margin: -19.5em 10em;float:right;}
+    .service4 {display: block;margin: -12em 12em;float:right;}
+    .service5 {display: block;margin: -9em 3em;float:right;}
+    .service6 {display: block;margin: -4em 16em;float:right;}  
+    .service7 {display: block;margin: -1em 13em;float:right;}
+}
+
+
+/*Vehicules*/
+
+   .vehicule { 
+      padding:1em;  
+      width:90%;   
+      & .card-image{margin-right:10%; margin-left:10%; width:80%;}
+      & .cardlist { margin-bottom:0.5em;display:grid;justify-content:center;
+                    padding-left:24%;
+                    display:grid;
+                    &  li { list-style:none; } }    
+                    
+   }
+
+   .page-vehicules { & > ul {display:grid;
+                           grid-template-columns: repeat( 4, 1fr );  
+                           column-width: 12.5em;  
+                          > li {list-style: none; margin-bottom:2em; }
+                    }
+                       }
+
+
+
+/********************
+*********************/
+$first-color:black;
+$second-color: #ff0000;
+body{background-color: #fff;}
+
+
+/* Structure */
+
+/*nav*/
+.navbar-nav li a{ color:$second-color;}
+
+/*Footer*/
+.copy-text{font-family: Dopestyle ;}
+footer{ 
+        color:$second-color ;
+        padding : 1em;
+        background-image : url("/Images/Illustrations/carbone_black_texture.png") ;   
+        background-repeat: repeat;
+        background-size: cover;
+        & .mentionslegales a{color:$second-color}
+     }
+    
+/*Pages*/ 
+  
+/*Accueil*/ 
+.notification{border:black solid 1px;
+         & button {border-color:$second-color;background-color: #fff; color:$second-color;}  
+        }
+
+
+/*Vehicules*/
+.vehicule .cardlist {  & h4 {color : $second-color; }  
+                       & button:hover {color: $second-color;  }      
+}

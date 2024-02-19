@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Services{% endblock %}
+
+{% block body %}
+
+<div class="maincontainer">
+<div class="page-{{page}}">
+     <h2>{{page|capitalize}}</h2>
+
+<ul>  
+    {% for keynumber, items in services %}
+       {% set key = items|keys|first %}  
+        <li class="service{{keynumber}}">
+       
+            <h3 class='servicetitle'>{{ key }}</h3>  
+    
+            <ul  >
+                {% for item in items %}  
+                 
+                {% for items2 in item %}
+                    <li>{{ items2 }}</li>  
+                {% endfor %}
+            </ul>
+        </li>
+                {% endfor %} 
+    {% endfor %}
+</ul>
+
+
+</div>
+</div>
+{% endblock %}

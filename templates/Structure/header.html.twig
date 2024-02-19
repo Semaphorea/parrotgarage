@@ -1,0 +1,17 @@
+{% block header %}
+<header class="header grid">
+    <div id="logo" class='logo'>
+         <a href="#" alt="garage parrot">
+                {% if crud is defined %}
+                <img src="../../images/logo/logo.png" alt="logo garage parrot" />
+                {% else %}    
+                <img src="../images/logo/logo.png" alt="logo garage parrot" />
+                {% endif %}
+         </a><span class='brant'>Garage Parrot</span></div> 
+         
+  
+
+</header>  
+
+
+{% endblock %}      

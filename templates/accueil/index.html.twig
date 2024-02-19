@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+
+<div class="maincontainer">
+   <div class="page-{{page}}">
+      
+          <p>Le garage Parrot vous accueille</p>   
+
+        
+          <p>Nous vous proposons des prestations de qualité et développons notre activité de vente de véhicule d'occasion</p>
+          <p>Nous vous assurons d'une continuité de service quelque soit votre besoin</p>
+          <p>Vincent Parrot (2021)</p> 
+          
+         <div id='accueil-carrousel'>
+     
+
+         </div>
+  
+
+         <aside class="notification">
+            <button  onClick="newMessage()">Nouveau Message</button>
+            {% for notice in notices %}
+                <div class="notice">  
+                     <div>
+                        <div class='notice-text'>{{notice.message}}</div>
+                        <div class="notice-signature">{{notice.visitor.firstname|split(" ",1)}}. {{notice.visitor.lastname}}</div>
+                        <div class="date" >{{notice.datecreation}}</div>         
+                      </div>                
+                </div> 
+         
+            {% endfor%}
+         </aside>
+    </div>     
+</div>
+{% endblock %}

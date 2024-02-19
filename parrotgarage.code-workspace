@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../parrot-server4"
+		}
+	],
+	"settings": {}
+}
